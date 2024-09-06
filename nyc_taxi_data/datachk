@@ -1,0 +1,15 @@
+#!/usr/bin/env python3
+import duckdb
+import pandas as pd
+
+# Connect to the DuckDB database
+con = duckdb.connect('dbt.duckdb', read_only=True)
+
+# Fetch the first 10 rows and display them as a DataFrame for better readability
+df = con.execute('select * from taxi_ride_raw limit 10').fetchdf()
+print("First 10 rows of taxi_ride_raw:")
+print(df)
+
+# Fetch the total count and display it in a readable format
+total_rides = con.execute('select count(*) as total_rides from taxi_ride_raw').fetchone()[0]
+print(f"\nTotal number of rides: {total_rides}")

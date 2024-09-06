@@ -1,0 +1,13 @@
+# ignore env
+/env
+
+# log file
+/logs
+
+# data
+/data
+
+# notebook
+/notebook
+
+/flow

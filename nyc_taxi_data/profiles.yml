@@ -1,0 +1,6 @@
+nyc_taxi_data:
+  outputs:
+    dev:
+      type: duckdb
+      path: dbt.duckdb
+  target: dev
